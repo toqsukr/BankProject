@@ -55,3 +55,6 @@ npm run build
 ## Дизайн проекта
 
 Дизайн проекта взят с Dribble: [https://dribbble.com/shots/22659176-Bankeu-Finance-Dashboard-Design](https://dribbble.com/shots/22659176-Bankeu-Finance-Dashboard-Design)
+
+![image](https://github.com/toqsukr/BankProject/assets/72607622/8cb12bed-4419-4c21-9866-e266176a346e)
+
