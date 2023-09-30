@@ -1,0 +1,30 @@
+#cardBarSection {
+  background-color: white;
+  border-radius: 40px;
+  font-family: 'Urbanist';
+}
+
+#cardBarHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 38px;
+  font-size: clamp(12px, 1.5vw, 20px);
+}
+
+#cardBarUpperContainer {
+  border-radius: 40px 40px 0 0;
+
+  background-color: rgb(248, 248, 248);
+}
+
+#cardBarLowerContainer {
+  padding: 38px;
+}
+
+#cardButtonContainer {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 38px;
+}

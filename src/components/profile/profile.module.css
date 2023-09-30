@@ -10,7 +10,7 @@
 }
 
 #profileText {
-  font-size: clamp(12px, 1.5vw, 22px);
+  font-size: clamp(8px, 1.4vw, 22px);
 }
 
 #profileIcon {
