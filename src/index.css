@@ -1,8 +1,12 @@
 body {
-    margin: 0;
+  margin: 0;
+}
+
+:root {
+  --index: calc(1vw + 1vh);
 }
 
 #root {
-    height: 100vh;
-    background-color: #f2f2f2;
+  height: 100vh;
+  background-color: #f2f2f2;
 }
