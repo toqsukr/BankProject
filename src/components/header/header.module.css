@@ -1,0 +1,12 @@
+#headerContainer {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 6fr;
+  gap: 25px;
+  margin: 30px;
+  font-family: 'Urbanist';
+}
+
+#logo {
+  width: 90px;
+  height: 90px;
+}

@@ -1,0 +1,15 @@
+.navElement {
+  justify-content: center;
+  padding: 36px 0 36px 0;
+  font-size: 22px;
+}
+
+#navContainer {
+  max-height: 90px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: white;
+  border-radius: 50px;
+}
