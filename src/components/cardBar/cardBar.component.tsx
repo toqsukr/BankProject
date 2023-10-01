@@ -10,6 +10,16 @@ const CardBar:FC = () => {
                 <span>Cards</span>
                 <span>Show All</span>
             </div>
+            <div id={css.cardContainer}>
+                <div id={css.card}>
+                    <div id={css.cardInnerContainer}>
+                        <span id={css.cardOwner}>Elijahs Popuass</span>
+                        <img src='/images/mastercard.png' className={css.cardInnerRightContianer} id={css.mastercard} />
+                        <span id={css.cardNumber}>0000 0000 0000 0016</span>
+                        <span className={css.cardInnerRightContianer} id={css.cardCVV}>CVV</span>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id={css.cardBarLowerContainer}>
             <div id={css.cardButtonContainer}>
