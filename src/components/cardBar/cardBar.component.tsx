@@ -1,4 +1,8 @@
 import CardButton from '@components/ui/cardButton/cardButton.component'
+import CardIcon from '@components/ui/icons/cardIcon.component'
+import LockIcon from '@components/ui/icons/lockIcon.component'
+import PinIcon from '@components/ui/icons/pinIcon.component'
+import SettingIcon from '@components/ui/icons/settingIcon.component'
 import { FC } from 'react'
 import css from './cardBar.module.css'
 
@@ -23,10 +27,18 @@ const CardBar:FC = () => {
         </div>
         <div id={css.cardBarLowerContainer}>
             <div id={css.cardButtonContainer}>
-                <CardButton title='Show Card Detail'></CardButton>
-                <CardButton title='Your PIN'></CardButton>
-                <CardButton title='Security Code'></CardButton>
-                <CardButton title='Edit Limits'></CardButton>
+                <CardButton title='Show Card Detail'>
+                    <CardIcon/>
+                </CardButton>
+                <CardButton title='Your PIN'>
+                    <PinIcon/>
+                </CardButton>
+                <CardButton title='Security Code'>
+                    <LockIcon/>
+                </CardButton>
+                <CardButton title='Edit Limits'>
+                    <SettingIcon/>
+                </CardButton>
             </div>
             <div id={css.addRemoveButtonContainer}>
                 

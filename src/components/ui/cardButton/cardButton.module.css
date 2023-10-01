@@ -2,12 +2,14 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 .cardButtonInfoContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
   font-size: clamp(12px, 1.5vw, 18px);
 }
 
