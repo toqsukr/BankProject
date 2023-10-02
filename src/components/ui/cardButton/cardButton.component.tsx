@@ -1,16 +1,12 @@
 import { FC, PropsWithChildren } from 'react'
-import ArrowIcon from '../icons/arrowIcon.component'
 import { ICardButton } from './cardButton.interface'
 import css from './cardButton.module.css'
 
-const CardButton:FC<PropsWithChildren<ICardButton>> = ({title, children}) => {
+const CardButton:FC<PropsWithChildren<ICardButton>> = ({ text, children, ...props}) => {
   return (
-    <div className={css.cardButtonContainer}>
-        <div className={css.cardButtonInfoContainer}>
-            {children}
-            <span>{title}</span>
-        </div>
-        <ArrowIcon className={css.icon}/>
+    <div {...props} className={css.buttonContainer}>
+        <span>{text}</span>
+        {children}
     </div>
   )
 }

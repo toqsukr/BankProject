@@ -1,7 +1,10 @@
 import CardButton from '@components/ui/cardButton/cardButton.component'
+import CardInfoElement from '@components/ui/cardInfoElement/cardInfoElement.component'
 import CardIcon from '@components/ui/icons/cardIcon.component'
 import LockIcon from '@components/ui/icons/lockIcon.component'
+import MinusIcon from '@components/ui/icons/minusIcon.component'
 import PinIcon from '@components/ui/icons/pinIcon.component'
+import PlusIcon from '@components/ui/icons/plusIcon.component'
 import SettingIcon from '@components/ui/icons/settingIcon.component'
 import { FC } from 'react'
 import css from './cardBar.module.css'
@@ -26,22 +29,27 @@ const CardBar:FC = () => {
             </div>
         </div>
         <div id={css.cardBarLowerContainer}>
-            <div id={css.cardButtonContainer}>
-                <CardButton title='Show Card Detail'>
+            <div id={css.cardInfoElementContainer}>
+                <CardInfoElement title='Show Card Detail'>
                     <CardIcon/>
-                </CardButton>
-                <CardButton title='Your PIN'>
+                </CardInfoElement>
+                <CardInfoElement title='Your PIN'>
                     <PinIcon/>
-                </CardButton>
-                <CardButton title='Security Code'>
+                </CardInfoElement>
+                <CardInfoElement title='Security Code'>
                     <LockIcon/>
-                </CardButton>
-                <CardButton title='Edit Limits'>
+                </CardInfoElement>
+                <CardInfoElement title='Edit Limits'>
                     <SettingIcon/>
-                </CardButton>
+                </CardInfoElement>
             </div>
-            <div id={css.addRemoveButtonContainer}>
-                
+            <div id={css.cardButtonContainer}>
+                <CardButton id={css.addButton} text='Add Card'>
+                    <PlusIcon id={css.plus}/>
+                </CardButton>
+                <CardButton id={css.removeButton} text='Remove'>
+                    <MinusIcon id={css.minus}/>
+                </CardButton>
             </div>
         </div>
     </section>

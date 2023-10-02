@@ -1,3 +1,5 @@
-export interface ICardButton {
-    title: string
+import { HTMLAttributes } from 'react';
+
+export interface ICardButton extends HTMLAttributes<HTMLDivElement> {
+  text: string;
 }

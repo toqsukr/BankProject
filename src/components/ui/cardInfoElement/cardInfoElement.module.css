@@ -1,0 +1,22 @@
+.cardInfoElementContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardInfoElementInfoContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  font-size: clamp(12px, 1.5vw, 18px);
+  font-weight: 500;
+}
+
+.icon {
+  max-height: 62px;
+  max-width: 62px;
+  width: calc(var(--index) * 0.6);
+  height: calc(var(--index) * 0.6);
+}

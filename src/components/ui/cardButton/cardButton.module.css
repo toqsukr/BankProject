@@ -1,21 +1,8 @@
-.cardButtonContainer {
+.buttonContainer {
   display: flex;
-  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-}
-
-.cardButtonInfoContainer {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  align-items: center;
-  font-size: clamp(12px, 1.5vw, 18px);
-}
-
-.icon {
-  max-height: 62px;
-  max-width: 62px;
-  width: calc(var(--index) * 0.6);
-  height: calc(var(--index) * 0.6);
+  border-radius: 30px;
+  padding: 20px 40px;
+  font-size: clamp(10px, 1.5vw, 20px);
 }
