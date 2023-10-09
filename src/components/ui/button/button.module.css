@@ -3,7 +3,34 @@
   align-items: center;
   justify-content: space-between;
   border-radius: 30px;
-  padding: 20px 40px;
-  background: #6e438e;
+  padding: 20px 50px;
+
   font-size: clamp(10px, 1.5vw, 20px);
+}
+
+.defaultButtonColor {
+  background: #f2f2f2;
+  color: rgb(0, 0, 0);
+}
+
+.purpleButtonColor {
+  background: #6e438e;
+  color: white;
+}
+
+.pinkButtonColor {
+  background: #fff1ec;
+  color: #da0000;
+}
+
+.defaultIconColor {
+  stroke: black;
+}
+
+.purpleIconColor {
+  stroke: white;
+}
+
+.pinkIconColor {
+  stroke: #da0000;
 }

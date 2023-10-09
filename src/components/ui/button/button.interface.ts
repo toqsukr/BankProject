@@ -1,5 +1,7 @@
-import { HTMLAttributes } from 'react';
+import { FC, SVGAttributes } from 'react';
 
-export interface IButton extends HTMLAttributes<HTMLDivElement> {
+export interface IButton {
   text: string;
+  color: 'white' | 'purple' | 'pink';
+  icon?: FC<SVGAttributes<HTMLOrSVGElement>>;
 }

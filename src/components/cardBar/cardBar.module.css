@@ -1,3 +1,7 @@
+#cardLayout {
+  padding: 0;
+}
+
 #cardBarSection {
   display: grid;
   grid-template-rows: 1fr 1.3fr;
@@ -63,6 +67,10 @@
   gap: 40px;
 }
 
+#minus {
+  stroke: #da0000;
+}
+
 #cardInnerContainer span {
   color: white;
   align-self: center;
@@ -99,14 +107,4 @@
 
 .cardInnerRightContianer {
   justify-self: center;
-}
-
-#addButton {
-  color: white;
-  background-color: #704594;
-}
-
-#removeButton {
-  color: #da0000;
-  background-color: #fff1ec;
 }

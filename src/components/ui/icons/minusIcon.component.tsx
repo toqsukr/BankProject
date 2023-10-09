@@ -1,10 +1,10 @@
 import { FC, SVGAttributes } from 'react';
-import css from './minusIcon.module.css';
+import css from './icon.module.css';
 
-const MinusIcon: FC<SVGAttributes<HTMLOrSVGElement>> = ({ stroke, ...props }) => {
+const MinusIcon: FC<SVGAttributes<HTMLOrSVGElement>> = ({ stroke, className, ...props }) => {
   return (
     <svg
-      className={css.minus}
+      className={`${css.icon} ${className}`}
       {...props}
       width='36'
       height='6'
