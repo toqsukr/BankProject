@@ -1,0 +1,12 @@
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: clamp(12px, 1.5vw, 20px);
+  font-family: 'Urbanist';
+}
+
+.otherText {
+  color: #6e438e;
+}

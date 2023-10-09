@@ -2,7 +2,7 @@
   position: relative;
 }
 
-#mainInnerContainer {
+#mainInnerSection {
   display: grid;
   grid-template-columns: 1fr 2.3fr;
   gap: 25px;

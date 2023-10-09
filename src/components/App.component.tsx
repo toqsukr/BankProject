@@ -1,17 +1,18 @@
-import css from './App.module.css'
-import CardBar from './cardBar/cardBar.component'
-import Header from './header/header.component'
+import css from './App.module.css';
+import CardBar from './cardBar/cardBar.component';
+import Header from './header/header.component';
+import MainSection from './mainSection/mainSection.component';
 
 function App() {
-
   return (
     <section id={css.mainSection}>
-      <Header/>
-      <div id={css.mainInnerContainer}>
-          <CardBar/>
-      </div>
+      <Header />
+      <section id={css.mainInnerSection}>
+        <CardBar />
+        <MainSection />
+      </section>
     </section>
-  )
+  );
 }
 
-export default App
+export default App;

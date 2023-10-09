@@ -1,17 +1,6 @@
 #cardBarSection {
   display: grid;
   grid-template-rows: 1fr 1.3fr;
-  background-color: white;
-  border-radius: 40px;
-  font-family: 'Urbanist';
-}
-
-#cardBarHeader {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  font-size: clamp(12px, 1.5vw, 20px);
 }
 
 #cardBarUpperContainer {
@@ -63,7 +52,6 @@
   rotate: -2deg;
   top: -30px;
   left: 2vw;
-  background: #6e438e;
   border-radius: 30px 30px 0 0;
   z-index: -1;
 }
@@ -121,15 +109,4 @@
 #removeButton {
   color: #da0000;
   background-color: #fff1ec;
-}
-
-#plus {
-  width: clamp(10px, 1.5vw, 18px);
-  height: clamp(10px, 1.5vw, 18px);
-}
-
-#minus {
-  width: clamp(10px, 1.5vw, 18px);
-  height: clamp(10px, 1.5vw, 18px);
-  stroke: #da0000;
 }
