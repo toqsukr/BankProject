@@ -9,8 +9,8 @@ const ContactBar = () => {
     <BarLayout>
       <SectionHeader title='Recent Contacts' otherText='All Contacts' />
       <div id={css.contactContainer}>
-        {contacts.map(contact => (
-          <ContactElement {...contact} />
+        {contacts.map((contact, index) => (
+          <ContactElement key={index} {...contact} />
         ))}
       </div>
     </BarLayout>
