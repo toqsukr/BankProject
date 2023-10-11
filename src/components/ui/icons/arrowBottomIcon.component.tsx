@@ -15,9 +15,9 @@ const ArrowBottomIcon: FC<SVGAttributes<HTMLOrSVGElement>> = ({ stroke, classNam
       <path
         d='M12 2L12 35M12 35L22 23M12 35L2 23'
         stroke={stroke}
-        stroke-width='3'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeWidth='3'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
     </svg>
   );

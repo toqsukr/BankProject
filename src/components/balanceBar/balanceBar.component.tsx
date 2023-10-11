@@ -13,7 +13,10 @@ const BalanceBar: FC = () => {
     <div id={css.mainContainer}>
       <BarLayout id={css.balanceLayout}>
         <SectionHeader {...balanceHeaderData} />
-        <span>29,475.00</span>
+        <div id={css.total}>
+          <span id={css.totalSum}>29,475.00</span>
+          <span id={css.totalValute}>USD</span>
+        </div>
         <div id={css.buttonContainer}>
           <Button color='purple' text='Send' icon={ArrowUpIcon}></Button>
           <Button color='white' text='Request' icon={ArrowBottomIcon}></Button>

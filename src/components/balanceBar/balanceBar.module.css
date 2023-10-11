@@ -17,11 +17,22 @@
 
 #balanceLayout {
   display: grid;
-  grid-template-rows: 1fr 1.5fr 1fr;
+  grid-template-rows: 0.3fr 1.5fr 1fr;
   gap: 20px;
 }
 
 #arrowRequest {
   rotate: 180deg;
   stroke: #000000;
+}
+
+#totalSum {
+  font-size: 5rem;
+  color: black;
+}
+
+#totalValute {
+  font-size: 1.2rem;
+  color: #989898;
+  margin: 0 0 0 30px;
 }
