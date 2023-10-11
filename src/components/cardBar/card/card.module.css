@@ -20,15 +20,15 @@
 }
 
 #card::after {
-  width: 85%;
-  height: 85%;
+  width: 410px;
+  height: 205px;
   display: flex;
   position: absolute;
   content: '';
   rotate: -2deg;
   background: var(--color-magneta);
   top: -30px;
-  left: 2vw;
+  left: 35px;
   border-radius: 30px 30px 0 0;
   z-index: -1;
 }
@@ -46,19 +46,19 @@
 }
 
 #cardNumber {
-  font-size: clamp(10px, 1.5vw, 24px);
+  font-size: clamp(20px, 1vw, 24px);
   letter-spacing: 2px;
 }
 
 #cardOwner {
-  font-size: clamp(10px, 3vw, 28px);
+  font-size: clamp(18px, 3vw, 28px);
 }
 
 #cardCVV {
   padding: 10px 20px;
   border-radius: 30px;
   background-color: #333333;
-  font-size: clamp(10px, 1.5vw, 18px);
+  font-size: clamp(14px, 1.5vw, 18px);
 }
 
 #mastercard {
