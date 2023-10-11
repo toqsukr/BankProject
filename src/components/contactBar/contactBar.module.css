@@ -1,7 +1,7 @@
 #addContactCircle {
   width: calc(var(--index) * 2.4);
   height: calc(var(--index) * 2.4);
-  border: 2px dashed #989898;
+  border: 2px dashed var(--color-gray);
   border-radius: 50%;
 }
 
@@ -11,6 +11,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
+  color: var(--color-text-gray);
 }
 
 #contactContainer {

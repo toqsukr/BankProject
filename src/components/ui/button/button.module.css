@@ -14,7 +14,7 @@
 }
 
 .purpleButtonColor {
-  background: #6e438e;
+  background: var(--color-magneta);
   color: white;
 }
 

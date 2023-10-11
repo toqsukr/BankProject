@@ -13,4 +13,9 @@
   justify-content: space-evenly;
   background-color: white;
   border-radius: 50px;
+  color: var(--color-gray);
+}
+
+#navContainer div:first-child {
+  color: black;
 }

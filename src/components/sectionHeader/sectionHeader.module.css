@@ -5,8 +5,9 @@
   align-items: center;
   font-size: clamp(12px, 1.5vw, 20px);
   font-family: 'Urbanist';
+  color: var(--color-text-gray);
 }
 
 .otherText {
-  color: #6e438e;
+  color: var(--color-magneta);
 }

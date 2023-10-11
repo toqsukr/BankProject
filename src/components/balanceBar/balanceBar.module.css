@@ -33,6 +33,6 @@
 
 #totalValute {
   font-size: 1.2rem;
-  color: #989898;
+  color: var(--color-gray);
   margin: 0 0 0 30px;
 }

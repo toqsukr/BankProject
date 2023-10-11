@@ -9,14 +9,20 @@
   padding: 0 15px 0 15px;
 }
 
-#profileText {
-  font-size: clamp(8px, 1.4vw, 22px);
-}
-
 #profileIcon {
   max-height: 62px;
   max-width: 62px;
   width: calc(var(--index) * 1.8);
   height: calc(var(--index) * 1.8);
   border-radius: 50%;
+}
+
+#textContainer {
+  font-size: clamp(8px, 1.4vw, 22px);
+  color: var(--color-text-gray);
+  margin: 0 0 0 20px;
+}
+
+#textContainer span:last-child {
+  color: var(--color-magneta);
 }

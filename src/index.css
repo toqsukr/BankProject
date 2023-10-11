@@ -4,6 +4,9 @@ body {
 
 :root {
   --index: calc(1vw + 1vh);
+  --color-magneta: #6e438e;
+  --color-gray: #989898;
+  --color-text-gray: #787878;
 }
 
 #root {
