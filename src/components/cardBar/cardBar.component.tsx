@@ -23,18 +23,10 @@ const CardBar: FC = () => {
         </div>
         <div id={css.cardBarLowerContainer}>
           <div id={css.cardInfoElementContainer}>
-            <CardInfoElement title='Show Card Detail'>
-              <CardIcon />
-            </CardInfoElement>
-            <CardInfoElement title='Your PIN'>
-              <PinIcon />
-            </CardInfoElement>
-            <CardInfoElement title='Security Code'>
-              <LockIcon />
-            </CardInfoElement>
-            <CardInfoElement title='Edit Limits'>
-              <SettingIcon />
-            </CardInfoElement>
+            <CardInfoElement title='Show Card Detail' icon={CardIcon} />
+            <CardInfoElement title='Your PIN' icon={PinIcon} />
+            <CardInfoElement title='Security Code' icon={LockIcon} />
+            <CardInfoElement title='Edit Limits' icon={SettingIcon} />
           </div>
           <div id={css.cardButtonContainer}>
             <Button color='purple' text='Add Card' icon={PlusIcon} />
