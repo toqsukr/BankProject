@@ -25,4 +25,5 @@
 
 #textContainer span:last-child {
   color: var(--color-magneta);
+  font-size: clamp(12px, 1.4vw, 26px);
 }

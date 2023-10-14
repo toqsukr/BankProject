@@ -1,4 +1,5 @@
 import BarLayout from '@components/layouts/barLayout/barLayout.component';
+import ReferralBar from '@components/referralBar/referralBar.component';
 import SectionHeader from '@components/sectionHeader/sectionHeader.component';
 import Button from '@components/ui/button/button.component';
 import ArrowBottomIcon from '@components/ui/icons/arrowBottomIcon.component';
@@ -23,7 +24,7 @@ const BalanceBar: FC = () => {
           <Button color='white' text='Top Up' icon={PlusIcon}></Button>
         </div>
       </BarLayout>
-      <div></div>
+      <ReferralBar />
     </div>
   );
 };
