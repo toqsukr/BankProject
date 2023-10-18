@@ -8,11 +8,11 @@ const SignForm: FC = () => {
       <form id={css.form} action=''>
         <input type='text' />
         <input type='text' />
+        <Button color='purple' text='Log in' />
       </form>
       <div id={css.buttonContainer}>
-        <Button color='purple' text='Log in' />
-        <Button color='purple' text='Sign up' />
-        <a href=''>Forgot password</a>
+        <a href='#'>No account? Sign up</a>
+        <a href='#'>Forgot password</a>
       </div>
     </section>
   );
