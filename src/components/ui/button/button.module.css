@@ -4,8 +4,13 @@
   justify-content: space-between;
   border-radius: 30px;
   padding: 20px 50px;
-
   font-size: clamp(10px, 1.5vw, 20px);
+  transition: opacity 0.2s;
+}
+
+.buttonContainer:hover {
+  opacity: 0.8;
+  transition: opacity 0.2s;
 }
 
 .defaultButtonColor {

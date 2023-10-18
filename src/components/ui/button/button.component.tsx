@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { IButton } from './button.interface';
 import css from './button.module.css';
 
-const Button: FC<IButton> = ({ text, icon: Icon, color }) => {
+const Button: FC<IButton> = ({ text, icon: Icon, color, ...props }) => {
   const buttonClasses = classNames({
     [css.buttonContainer]: true,
     [css.defaultButtonColor]: color === 'white',
@@ -17,10 +17,10 @@ const Button: FC<IButton> = ({ text, icon: Icon, color }) => {
     [css.pinkIconColor]: color === 'pink'
   });
   return (
-    <div className={buttonClasses}>
+    <button {...props} className={buttonClasses}>
       <span>{text}</span>
       {Icon && <Icon className={iconClasses} />}
-    </div>
+    </button>
   );
 };
 

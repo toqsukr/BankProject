@@ -4,7 +4,6 @@
   justify-content: space-between;
   align-items: center;
   font-size: clamp(12px, 1.5vw, 20px);
-  font-family: 'Urbanist';
   color: var(--color-text-gray);
 }
 

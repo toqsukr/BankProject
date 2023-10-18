@@ -1,5 +1,6 @@
 #mainSection {
   position: relative;
+  max-width: 2048px;
 }
 
 #mainInnerSection {
