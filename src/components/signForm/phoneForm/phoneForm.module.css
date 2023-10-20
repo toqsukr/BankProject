@@ -1,0 +1,21 @@
+#buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+#form {
+  display: grid;
+  min-height: 65px;
+  grid-template: 1fr / 1fr 65px;
+  gap: 10px;
+}
+
+#form button {
+  padding: 0;
+  width: 4.0625rem;
+  height: 4.0625rem;
+  border-radius: 16px;
+  justify-content: center;
+}
