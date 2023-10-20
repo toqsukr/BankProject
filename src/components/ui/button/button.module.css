@@ -43,3 +43,7 @@
 .pinkIconColor {
   stroke: #da0000;
 }
+
+.buttonContainer span {
+  display: block;
+}
