@@ -3,7 +3,7 @@
   height: 100%;
   background-color: white;
   border-radius: 24px;
-  padding: 40px;
+  padding: 30px;
 }
 
 #buttonContainer {
@@ -16,12 +16,12 @@
 #buttonContainer a {
   position: relative;
   color: var(--color-text-gray);
-  transition: opacity 0.2s;
+  transition: opacity 0.3s;
 }
 
 #buttonContainer a:hover {
   opacity: 0.8;
-  transition: opacity 0.2s;
+  transition: opacity 0.3s;
 }
 
 #buttonContainer a::after {
@@ -33,10 +33,25 @@
   left: 0;
   background-color: var(--color-text-gray);
   scale: 0;
-  transition: scale 0.2s;
+  transition: scale 0.3s;
 }
 
 #buttonContainer a:hover::after {
   scale: 1;
-  transition: scale 0.2s;
+  transition: scale 0.3s;
+}
+
+#form {
+  display: grid;
+  min-height: 65px;
+  grid-template: 1fr / 1fr 65px;
+  gap: 10px;
+}
+
+#form button {
+  padding: 0;
+  width: 4.0625rem;
+  height: 4.0625rem;
+  border-radius: 16px;
+  justify-content: center;
 }

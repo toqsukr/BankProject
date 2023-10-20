@@ -3,6 +3,7 @@
   --color-magneta: #6e438e;
   --color-gray: #989898;
   --color-text-gray: #787878;
+  --color-background: #f2f2f2;
 }
 
 #root {
@@ -53,7 +54,7 @@ body {
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  background-color: #f2f2f2;
+  background-color: var(--color-background);
   font-family: 'Urbanist';
 }
 
