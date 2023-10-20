@@ -8,6 +8,10 @@
   transition: opacity 0.3s;
 }
 
+.buttonContainer:focus {
+  opacity: 0.9;
+}
+
 .buttonContainer:hover {
   opacity: 0.85;
   transition: opacity 0.3s;

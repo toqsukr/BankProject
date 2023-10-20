@@ -28,6 +28,7 @@
   color: var(--color-magneta);
   text-align: center;
   margin: 20px;
+  letter-spacing: 4px;
 }
 
 #logo {

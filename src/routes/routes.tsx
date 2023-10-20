@@ -1,4 +1,4 @@
-import { ROUTES } from '@constants/routes';
+import { ROUTES } from '@constants/constants';
 import Error from '@pages/error/Error.page';
 import { createBrowserRouter } from 'react-router-dom';
 
