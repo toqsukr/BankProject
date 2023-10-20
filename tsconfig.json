@@ -20,6 +20,7 @@
       "@interfaces/*": ["src/interfaces/*"],
       "@pages/*": ["src/pages/*"],
       "@constants/*": ["src/constants/*"],
+      "@services/*": ["src/services/*"],
 
     },
 

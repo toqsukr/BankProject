@@ -4,4 +4,4 @@ export const ROUTES = {
   PAGE_404_ROUTE: '/404'
 } as const;
 
-export const HOST_URL = 'localhost:3000/api';
+export const HOST_URL = 'http://localhost:3000/api';

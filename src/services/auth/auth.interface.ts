@@ -11,6 +11,9 @@ export interface ILoginRequest {
 export interface IRegisterRequest extends ILoginRequest {
   name: string;
   surname: string;
-  balance: number;
   dateOfBirth: string;
+}
+
+export interface IUser extends Omit<IRegisterRequest, 'password'> {
+  balance: number;
 }
