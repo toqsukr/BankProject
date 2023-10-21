@@ -1,11 +1,11 @@
 import { HOST_URL } from '@constants/constants';
-import axios, { AxiosResponse } from 'axios';
+import axios, { AxiosResponse, HttpStatusCode } from 'axios';
 import { IUser } from '../auth/auth.interface';
 
 export const ProfileService = {
-  async getProfile(phoneNumber: string) {
+  async getProfile(phoneNumber: string): Promise<IUser | null | {}> {
     try {
-      const response = await axios.post<string, AxiosResponse<IUser>>(
+      const response = await axios.post<{ data: string }, AxiosResponse<IUser, IUser>>(
         `${HOST_URL}/user`,
         { phone: phoneNumber },
         {
@@ -16,8 +16,9 @@ export const ProfileService = {
       );
       return response.data;
     } catch (error) {
-      console.error(error);
-      return null;
+      if (!axios.isAxiosError(error)) return null;
+      if (!error.response || error.response.status === HttpStatusCode.InternalServerError) return null;
+      else return {};
     }
   }
 };

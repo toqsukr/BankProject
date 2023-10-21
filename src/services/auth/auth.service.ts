@@ -5,7 +5,7 @@ import { IAuthResponse, ILoginRequest, IRegisterRequest } from './auth.interface
 
 export const AuthService = {
   async login(data: ILoginRequest) {
-    const response = await axios.post<ILoginRequest, AxiosResponse<IAuthResponse>>(
+    const response = await axios.post<{ data: ILoginRequest }, AxiosResponse<IAuthResponse, IAuthResponse>>(
       `${HOST_URL}/auth/login`,
       data,
       {
@@ -20,17 +20,16 @@ export const AuthService = {
   },
 
   async register(data: IRegisterRequest) {
-    const response = await axios.post<IRegisterRequest, AxiosResponse<IAuthResponse>>(
-      `${HOST_URL}/auth/register`,
-      data,
-      {
-        headers: {
-          'Content-Type': 'application/json'
-        }
+    const response = await axios.post<
+      { data: IRegisterRequest },
+      AxiosResponse<IAuthResponse, IAuthResponse>
+    >(`${HOST_URL}/auth/register`, data, {
+      headers: {
+        'Content-Type': 'application/json'
       }
-    );
+    });
     if (response.data.user) saveUserToStorage(response.data.user);
     if (response.data.accessToken) saveTokenToStorage(response.data.accessToken);
-    return response;
+    return response.data;
   }
 };

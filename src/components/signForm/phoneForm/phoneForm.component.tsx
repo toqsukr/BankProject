@@ -20,7 +20,9 @@ const PhoneForm: FC<IPhoneForm> = ({ setPhone }) => {
   } = useForm<{ phoneNumber: string }>();
   const onSubmit: SubmitHandler<{ phoneNumber: string }> = async ({ phoneNumber }) => {
     const user = await getUser(phoneNumber);
-    user && 'phone' in user ? setPhone(user.phone) : setPhone('');
+    if (user !== null) {
+      'phone' in user ? setPhone(user.phone) : setPhone('');
+    }
   };
   return (
     <>
