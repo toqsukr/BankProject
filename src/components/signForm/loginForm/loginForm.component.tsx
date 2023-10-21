@@ -1,14 +1,16 @@
 import Button from '@components/ui/button/button.component';
 import ArrowHeadIcon from '@components/ui/icons/arrowHeadIcon.component';
 import Input from '@components/ui/input/input.component';
-import { useActions } from '@hooks/useActions.hook';
+import { useAuth } from '@hooks/useAuth.hook';
 import { FC } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { ILoginForm } from './loginForm.interface';
 import css from './loginForm.module.css';
 
 const LoginForm: FC<ILoginForm> = ({ phone }) => {
-  const { login } = useActions();
+  const {
+    actions: { login }
+  } = useAuth();
   const {
     register,
     handleSubmit,

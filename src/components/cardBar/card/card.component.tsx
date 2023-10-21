@@ -6,7 +6,9 @@ import css from './card.module.css';
 
 const Card: FC = () => {
   const { cardNumber, paymentSystem } = cardData;
-  const { user } = useAuth();
+  const {
+    state: { user }
+  } = useAuth();
   return (
     <div id={css.cardContainer}>
       <div id={css.card}>

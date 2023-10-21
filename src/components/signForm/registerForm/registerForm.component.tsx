@@ -1,6 +1,6 @@
 import Button from '@components/ui/button/button.component';
 import Input from '@components/ui/input/input.component';
-import { useActions } from '@hooks/useActions.hook';
+import { useAuth } from '@hooks/useAuth.hook';
 import { IRegisterRequest } from '@services/auth/auth.interface';
 import { FC } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -10,7 +10,9 @@ import { IRegisterForm } from './registerForm.interface';
 import css from './registerForm.module.css';
 
 const RegisterForm: FC<IRegisterForm> = ({ phone }) => {
-  const { register } = useActions();
+  const {
+    actions: { register }
+  } = useAuth();
   const {
     register: formSubmit,
     handleSubmit,

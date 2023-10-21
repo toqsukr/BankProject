@@ -4,7 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from './useAuth.hook';
 
 export const useAuthRedirect = () => {
-  const { user } = useAuth();
+  const {
+    state: { user }
+  } = useAuth();
   const navigate = useNavigate();
   const redirectTo = (path: Routes) => navigate(path);
   useEffect(() => {

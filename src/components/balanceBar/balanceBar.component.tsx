@@ -11,7 +11,9 @@ import { balanceHeaderData } from './balanceBar.data';
 import css from './balanceBar.module.css';
 
 const BalanceBar: FC = () => {
-  const { user } = useAuth();
+  const {
+    state: { user }
+  } = useAuth();
   return (
     <div id={css.mainContainer}>
       <BarLayout id={css.balanceLayout}>
