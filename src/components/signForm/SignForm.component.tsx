@@ -1,16 +1,17 @@
 import { FC, useState } from 'react';
+import { UserStatus } from './SignForm.interface';
 import css from './SignForm.module.css';
 import LoginForm from './loginForm/loginForm.component';
 import PhoneForm from './phoneForm/phoneForm.component';
 import RegisterForm from './registerForm/registerForm.component';
 
 const SignForm: FC = () => {
-  const [phone, setPhone] = useState<string | null>(null);
+  const [userStatus, setUserStatus] = useState<UserStatus | null>(null);
   return (
     <section id={css.signSection}>
-      {phone === null && <PhoneForm setPhone={setPhone} />}
-      {!!phone && phone !== '' && <LoginForm phone={phone} />}
-      {phone === '' && <RegisterForm />}
+      {!!!userStatus && <PhoneForm setUserStatus={setUserStatus} />}
+      {userStatus?.status === 'registered' && <LoginForm phone={userStatus.phone} />}
+      {userStatus?.status === 'unregistered' && <RegisterForm phone={userStatus.phone} />}
     </section>
   );
 };

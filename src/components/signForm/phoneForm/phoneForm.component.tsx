@@ -9,7 +9,7 @@ import { IPhoneForm } from './phoneForm.interface';
 import css from './phoneForm.module.css';
 import { handleChange } from './phoneForm.validation';
 
-const PhoneForm: FC<IPhoneForm> = ({ setPhone }) => {
+const PhoneForm: FC<IPhoneForm> = ({ setUserStatus }) => {
   const { getUser } = useProfile();
   const {
     register,
@@ -20,8 +20,10 @@ const PhoneForm: FC<IPhoneForm> = ({ setPhone }) => {
   } = useForm<{ phoneNumber: string }>();
   const onSubmit: SubmitHandler<{ phoneNumber: string }> = async ({ phoneNumber }) => {
     const user = await getUser(phoneNumber);
-    if (user !== null) {
-      'phone' in user ? setPhone(user.phone) : setPhone('');
+    if (user !== null && 'phone' in user) {
+      setUserStatus({ phone: user.phone, status: 'registered' });
+    } else if (user !== null) {
+      setUserStatus({ phone: phoneNumber, status: 'unregistered' });
     }
   };
   return (

@@ -11,7 +11,7 @@ export const getFromLocalStorage = (key: string) => {
 };
 
 export const saveTokenToStorage = (accessToken: string) => {
-  Cookies.set(Tokens.ACCESS_TOKEN, accessToken, { secure: true });
+  Cookies.set(`bank-project-${Tokens.ACCESS_TOKEN}`, accessToken, { secure: true });
 };
 
 export const deleteTokenFromStorage = () => {
@@ -19,7 +19,7 @@ export const deleteTokenFromStorage = () => {
 };
 
 export const saveUserToStorage = (data: Omit<IRegisterRequest, 'password'>) => {
-  localStorage.setItem('user', JSON.stringify(data));
+  localStorage.setItem('bank-project-user', JSON.stringify(data));
 };
 
 export const removeFromStorage = (key: string) => {

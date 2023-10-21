@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
+import { UserStatus } from '../SignForm.interface';
 
 export interface IPhoneForm {
-  setPhone: Dispatch<SetStateAction<string | null>>;
+  setUserStatus: Dispatch<SetStateAction<UserStatus | null>>;
 }

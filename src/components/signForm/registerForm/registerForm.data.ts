@@ -3,7 +3,7 @@ export const nameInputSetting = {
   minLength: { value: 2, message: 'Your name is too short' },
   maxLength: { value: 20, message: 'Your name is too large' },
   pattern: {
-    value: /^[\p{L}' -]+$/,
+    value: /^[A-Za-z'\s-]+$/,
     message: 'Entered incorrect name'
   }
 };
@@ -13,7 +13,7 @@ export const surnameInputSetting = {
   minLength: { value: 2, message: 'Your surname is too short' },
   maxLength: { value: 30, message: 'Your surname is too large' },
   pattern: {
-    value: /^[\p{L}' -]+$/,
+    value: /^[A-Za-z'\s-]+$/,
     message: 'Entered incorrect surname'
   }
 };
