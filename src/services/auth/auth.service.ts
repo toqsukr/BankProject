@@ -5,7 +5,7 @@ import { IAuthResponse, ILoginRequest, IRegisterRequest } from './auth.interface
 
 export const AuthService = {
   async login(data: ILoginRequest) {
-    const response = await axios.post<{ data: ILoginRequest }, AxiosResponse<IAuthResponse, IAuthResponse>>(
+    const response = await axios.post<{ data: ILoginRequest }, AxiosResponse<IAuthResponse>>(
       `${HOST_URL}/auth/login`,
       data,
       {

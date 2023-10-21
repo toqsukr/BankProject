@@ -1,5 +1,5 @@
 export interface IAuthResponse {
-  user: Omit<IRegisterRequest, 'password'>;
+  user: IUser;
   accessToken: string;
 }
 
