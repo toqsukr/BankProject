@@ -1,8 +1,3 @@
-import { ILoginRequest, IRegisterRequest } from '@services/auth/auth.interface';
-import { AuthService } from '@services/auth/auth.service';
+import { useTypedSelector } from './useTypedSelector.hook';
 
-export const useAuth = () => {
-  const login = (data: ILoginRequest) => AuthService.login(data);
-  const register = (data: IRegisterRequest) => AuthService.register(data);
-  return { login, register };
-};
+export const useAuth = () => useTypedSelector(state => state.user);

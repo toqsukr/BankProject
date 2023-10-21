@@ -1,6 +1,6 @@
 import Button from '@components/ui/button/button.component';
 import Input from '@components/ui/input/input.component';
-import { useAuth } from '@hooks/useAuth.hook';
+import { useActions } from '@hooks/useActions.hook';
 import { IRegisterRequest } from '@services/auth/auth.interface';
 import { FC } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -10,7 +10,7 @@ import { IRegisterForm } from './registerForm.interface';
 import css from './registerForm.module.css';
 
 const RegisterForm: FC<IRegisterForm> = ({ phone }) => {
-  const { register } = useAuth();
+  const { register } = useActions();
   const {
     register: formSubmit,
     handleSubmit,
@@ -19,7 +19,7 @@ const RegisterForm: FC<IRegisterForm> = ({ phone }) => {
     formState: { errors }
   } = useForm<Omit<IRegisterRequest, 'phone'>>();
   const onSubmit: SubmitHandler<Omit<IRegisterRequest, 'phone'>> = async data => {
-    await register({ ...data, phone });
+    register({ ...data, phone });
   };
   return (
     <form id={css.form} onSubmit={handleSubmit(onSubmit)}>

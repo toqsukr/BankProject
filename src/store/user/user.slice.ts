@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getUser, login, register } from './user.actions';
+import { login, register } from './user.actions';
 import { IInitialState } from './user.interface';
 
 const initialState: IInitialState = {
@@ -21,8 +21,9 @@ export const userSlice = createSlice({
         state.isLoading = true;
         state.phoneExist = false;
       })
-      .addCase(register.fulfilled, state => {
+      .addCase(register.fulfilled, (state, { payload }) => {
         state.isLoading = false;
+        state.user = payload.user;
       })
       .addCase(register.rejected, state => {
         state.isLoading = false;
@@ -41,10 +42,6 @@ export const userSlice = createSlice({
         state.isLoading = false;
         state.userNotFound = true;
         state.user = null;
-      })
-      .addCase(getUser.pending, state => {
-        state.isLoading = true;
-        state.userNotFound = false;
       });
   }
 });
