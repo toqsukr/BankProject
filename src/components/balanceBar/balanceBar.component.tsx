@@ -5,17 +5,19 @@ import Button from '@components/ui/button/button.component';
 import ArrowBottomIcon from '@components/ui/icons/arrowBottomIcon.component';
 import ArrowUpIcon from '@components/ui/icons/arrowUpIcon.component';
 import PlusIcon from '@components/ui/icons/plusIcon.component';
+import { useAuth } from '@hooks/useAuth.hook';
 import { FC } from 'react';
 import { balanceHeaderData } from './balanceBar.data';
 import css from './balanceBar.module.css';
 
 const BalanceBar: FC = () => {
+  const { user } = useAuth();
   return (
     <div id={css.mainContainer}>
       <BarLayout id={css.balanceLayout}>
         <SectionHeader {...balanceHeaderData} />
         <div id={css.total}>
-          <span id={css.totalSum}>29,475.00</span>
+          <span id={css.totalSum}>{user?.balance}</span>
           <span id={css.totalValute}>USD</span>
         </div>
         <div id={css.buttonContainer}>

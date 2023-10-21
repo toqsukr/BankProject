@@ -18,7 +18,7 @@
   border-radius: 40px;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 0;
 }
 
 #referralBody {
@@ -26,6 +26,7 @@
   align-items: center;
   height: 100%;
   grid-template: repeat(3, 1fr) / 1fr;
+  z-index: 1;
 }
 
 #referralText {
@@ -43,6 +44,7 @@
   align-items: center;
   justify-content: space-between;
   text-align: 1rem;
+  z-index: inherit;
 }
 
 #linkContainer span {
@@ -58,4 +60,6 @@
   background-color: black;
   border-radius: 50%;
   margin-right: 8px;
+  cursor: pointer;
+  z-index: inherit;
 }
