@@ -13,7 +13,7 @@ const ContactBar = () => {
   } = useAuth();
 
   const {
-    state: { contacts },
+    state: { contacts, isLoading },
     actions: { getContacts }
   } = useContact();
 
@@ -31,9 +31,7 @@ const ContactBar = () => {
           </div>
           <span>Add</span>
         </div>
-        {contacts.map((contact, index) => (
-          <ContactElement key={index} {...contact} />
-        ))}
+        {!isLoading && contacts.map((contact, index) => <ContactElement key={index} {...contact} />)}
       </div>
     </BarLayout>
   );
