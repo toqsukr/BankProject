@@ -1,4 +1,6 @@
-export const usePaymentSystem = () => {
+import { useMemo } from 'react';
+
+export const usePaymentSystem = useMemo(() => {
   type PaymentSystem =
     | 'VISA'
     | 'MASTERCARD'
@@ -61,4 +63,4 @@ export const usePaymentSystem = () => {
   };
 
   return { detectPaymentSystem, PaymentSystems, PaymentSystemImages };
-};
+}, []);

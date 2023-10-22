@@ -29,7 +29,7 @@ const Card: FC = () => {
           />
           <span id={css.cardNumber}>{defalutCard?.cardNumber}</span>
           <span className={css.cardInnerRightContianer} id={css.cardCVV}>
-            {defalutCard?.code}
+            CVV
           </span>
         </div>
       </div>
