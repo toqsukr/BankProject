@@ -1,4 +1,3 @@
-import { useAuthRedirect } from '@hooks/useAuthRedirect.hook';
 import { FC, useState } from 'react';
 import { UserStatus } from './SignForm.interface';
 import css from './SignForm.module.css';
@@ -8,7 +7,6 @@ import RegisterForm from './registerForm/registerForm.component';
 
 const SignForm: FC = () => {
   const [userStatus, setUserStatus] = useState<UserStatus | null>(null);
-  useAuthRedirect();
   return (
     <section id={css.signSection}>
       {!!!userStatus && <PhoneForm setUserStatus={setUserStatus} />}
