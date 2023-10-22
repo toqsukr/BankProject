@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { login, register } from './user.actions';
-import { IInitialState } from './user.interface';
+import { IUserInitialState } from './user.interface';
 
-const initialState: IInitialState = {
+const initialState: IUserInitialState = {
   user: localStorage.getItem('bank-project-user')
     ? JSON.parse(localStorage.getItem('bank-project-user') as string)
     : null,

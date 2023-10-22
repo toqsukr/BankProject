@@ -16,4 +16,5 @@ export interface IRegisterRequest extends ILoginRequest {
 
 export interface IUser extends Omit<IRegisterRequest, 'password'> {
   balance: number;
+  image: string;
 }

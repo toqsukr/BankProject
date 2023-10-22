@@ -1,14 +1,14 @@
 import { bindActionCreators } from '@reduxjs/toolkit';
-import * as userActions from '@store/user/user.actions';
+import * as contactActions from '@store/contacts/contacts.actions';
 import { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import { useTypedSelector } from './useTypedSelector.hook';
 
-export const useAuth = () => {
+export const useContact = () => {
   const dispatch = useDispatch();
 
   return {
-    state: useTypedSelector(state => state.user),
-    actions: useMemo(() => bindActionCreators(userActions, dispatch), [dispatch])
+    state: useTypedSelector(state => state.contacts),
+    actions: useMemo(() => bindActionCreators(contactActions, dispatch), [dispatch])
   };
 };

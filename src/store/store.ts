@@ -3,6 +3,8 @@ import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE } from 'redux-persist
 import persistReducer from 'redux-persist/es/persistReducer';
 import persistStore from 'redux-persist/es/persistStore';
 import storage from 'redux-persist/lib/storage';
+import { cardSlice } from './cards/cards.slice';
+import { contactSlice } from './contacts/contacts.slice';
 import { userSlice } from './user/user.slice';
 
 const persistConfig = {
@@ -11,7 +13,9 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-  user: userSlice.reducer
+  user: userSlice.reducer,
+  cards: cardSlice.reducer,
+  contacts: contactSlice.reducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
