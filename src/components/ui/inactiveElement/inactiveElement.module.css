@@ -1,0 +1,6 @@
+#inactiveElement {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-background);
+  border-radius: 18px;
+}

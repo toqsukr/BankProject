@@ -8,18 +8,34 @@ import MinusIcon from '@components/ui/icons/minusIcon.component';
 import PinIcon from '@components/ui/icons/pinIcon.component';
 import PlusIcon from '@components/ui/icons/plusIcon.component';
 import SettingIcon from '@components/ui/icons/settingIcon.component';
-import { FC } from 'react';
+import InactiveElement from '@components/ui/inactiveElement/inactiveElement.component';
+import { useAuth } from '@hooks/useAuth.hook';
+import { useCard } from '@hooks/useCard.hook';
+import { FC, useEffect } from 'react';
 import Card from './card/card.component';
 import { cardHeaderData } from './cardBar.data';
 import css from './cardBar.module.css';
+import CardNotFound from './cardNotFound/cardNotFound.component';
 
 const CardBar: FC = () => {
+  const {
+    state: { defalutCard },
+    actions: { getCards }
+  } = useCard();
+
+  const {
+    state: { user }
+  } = useAuth();
+
+  useEffect(() => {
+    user && getCards(user.phone);
+  }, []);
   return (
     <BarLayout id={css.cardLayout}>
       <div id={css.cardBarSection}>
         <div id={css.cardBarUpperContainer}>
           <SectionHeader {...cardHeaderData} />
-          <Card />
+          {defalutCard ? <Card /> : <CardNotFound />}
         </div>
         <div id={css.cardBarLowerContainer}>
           <div id={css.cardInfoElementContainer}>
@@ -30,7 +46,7 @@ const CardBar: FC = () => {
           </div>
           <div id={css.cardButtonContainer}>
             <Button color='purple' text='Add Card' icon={PlusIcon} />
-            <Button color='pink' text='Remove' icon={MinusIcon} />
+            {!!defalutCard ? <Button color='pink' text='Remove' icon={MinusIcon} /> : <InactiveElement />}
           </div>
         </div>
       </div>

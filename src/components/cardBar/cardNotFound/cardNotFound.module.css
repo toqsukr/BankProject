@@ -1,0 +1,15 @@
+#cardNotFoundContainer {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 30px 30px 0 0;
+  background-color: var(--color-background);
+}
+
+#cardNotFoundContainer p {
+  display: flex;
+  font-size: 24px;
+  font-weight: 100;
+}
