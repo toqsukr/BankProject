@@ -1,12 +1,12 @@
+import { IContact } from '@store/contacts/contacts.interface';
 import { FC } from 'react';
-import { IContact } from './contactElement.interface';
 import css from './contactElement.module.css';
 
-const ContactElement: FC<IContact> = ({ name, profileIconURL }) => {
-  const shortName = name.indexOf(' ') === -1 ? name : name.slice(0, name.indexOf(' ') + 2);
+const ContactElement: FC<IContact> = ({ name, surname, image }) => {
+  const shortName = name + ' ' + surname[0];
   return (
     <div className={css.contactElementContainer}>
-      <img className={css.contactIcon} src={profileIconURL} alt='' />
+      <img className={css.contactIcon} src={image} alt='' />
       <span>{shortName}</span>
     </div>
   );

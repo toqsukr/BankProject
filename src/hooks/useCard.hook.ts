@@ -6,9 +6,9 @@ import { useTypedSelector } from './useTypedSelector.hook';
 
 export const useCard = () => {
   const dispatch = useDispatch();
-
+  const cards = useTypedSelector(state => state.cards).cards;
   return {
-    state: useTypedSelector(state => state.cards),
+    state: { defalutCard: !!cards ? cards[0] : null, ...useTypedSelector(state => state.cards) },
     actions: useMemo(() => bindActionCreators(cardActions, dispatch), [dispatch])
   };
 };
