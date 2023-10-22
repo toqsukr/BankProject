@@ -1,17 +1,18 @@
-import { getFromLocalStorage } from '@services/auth/auth.helper';
-import { IUser } from '@services/auth/auth.interface';
+import { useAuth } from '@hooks/useAuth.hook';
 import { FC } from 'react';
 import css from './profile.module.css';
 
 const Profile: FC = () => {
-  const user: IUser = getFromLocalStorage('bank-project-user');
+  const {
+    state: { user }
+  } = useAuth();
   return (
     <div id={css.profileContainer}>
       <div id={css.textContainer}>
         <span>Welcome back, </span>
-        <span>{user.name}!</span>
+        <span>{user?.name}!</span>
       </div>
-      <img id={css.profileIcon} src='/images/profile_photo.jpg' alt='' />
+      <img id={css.profileIcon} src={user?.image ? user.image : '/images/profile_photo_default.png'} alt='' />
     </div>
   );
 };
