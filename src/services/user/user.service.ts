@@ -3,6 +3,7 @@ import { ICard } from '@store/cards/cards.interface';
 import { IContact } from '@store/contacts/contacts.interface';
 import axios, { AxiosResponse, HttpStatusCode } from 'axios';
 import { IUser } from '../auth/auth.interface';
+import { ICardRequest } from './user.interface';
 
 export const UserService = {
   async getUser(phoneNumber: string): Promise<IUser | null | {}> {
@@ -41,6 +42,19 @@ export const UserService = {
     const response = await axios.post<{ data: string }, AxiosResponse<ICard[]>>(
       `${HOST_URL}/user/cards`,
       { phone: phoneNumber },
+      {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+    );
+    return response.data;
+  },
+
+  async appendCard(cardData: ICardRequest) {
+    const response = await axios.post<{ cardData: ICardRequest }, AxiosResponse<ICard[]>>(
+      `${HOST_URL}/user/cards/add`,
+      cardData,
       {
         headers: {
           'Content-Type': 'application/json'

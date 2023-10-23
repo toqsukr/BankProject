@@ -1,7 +1,7 @@
 .addContainer {
   display: grid;
   grid-template: 1fr 1fr / 1fr;
-  width: 650px;
+  width: 600px;
   height: 600px;
   border-radius: 24px;
   background-color: white;

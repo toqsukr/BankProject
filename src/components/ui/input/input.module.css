@@ -11,6 +11,10 @@
   border: 1px solid var(--color-background);
 }
 
+.input:disabled {
+  opacity: 0.7;
+}
+
 .input:focus {
   border: 1px solid var(--color-gray);
 }

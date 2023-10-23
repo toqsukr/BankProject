@@ -1,7 +1,7 @@
 export interface ICard {
   cardNumber: string;
   expires: string;
-  code: number;
+  code: string;
   cardOwner: string;
 }
 
