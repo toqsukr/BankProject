@@ -14,9 +14,9 @@ import { useCard } from '@hooks/useCard.hook';
 import { useOutside } from '@hooks/useOutside.hook';
 import { FC, useEffect } from 'react';
 import AddCardPopup from './addCardPopup/addCardPopup.component';
-import Card from './card/card.component';
 import { cardHeaderData } from './cardBar.data';
 import css from './cardBar.module.css';
+import CardHolder from './cardHolder/cardHolder.component';
 import CardNotFound from './cardNotFound/cardNotFound.component';
 
 const CardBar: FC = () => {
@@ -39,7 +39,7 @@ const CardBar: FC = () => {
       <div id={css.cardBarSection}>
         <div id={css.cardBarUpperContainer}>
           <SectionHeader {...cardHeaderData} />
-          {defalutCard ? <Card /> : <CardNotFound />}
+          {defalutCard ? <CardHolder /> : <CardNotFound />}
         </div>
         <div id={css.cardBarLowerContainer}>
           <div id={css.cardInfoElementContainer}>

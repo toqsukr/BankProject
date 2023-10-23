@@ -16,7 +16,7 @@
 }
 
 .input:focus::placeholder {
-  transform: translateY(-20px);
+  transform: translateY(-18fpx);
   font-size: 1rem;
   transition: transform 0.3s, font-size 0.3s;
 }
