@@ -1,0 +1,28 @@
+#addContainer {
+  width: 700px;
+  height: 500px;
+  border-radius: 24px;
+  background-color: var(--color-background);
+}
+
+.addCard_enter {
+  background-color: rgba(0, 0, 0, 0);
+  scale: 0;
+}
+
+.addCard_enter_active {
+  background-color: rgba(0, 0, 0, 0.5);
+  scale: 1;
+  transition: background-color, scale 0.3s;
+}
+
+.addCard_exit {
+  background-color: rgba(0, 0, 0, 0.5);
+  scale: 1;
+}
+
+.addCard_exit_active {
+  background-color: rgba(0, 0, 0, 0);
+  scale: 0;
+  transition: background-color, scale 0.3s;
+}

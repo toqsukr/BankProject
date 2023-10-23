@@ -11,13 +11,17 @@ import SettingIcon from '@components/ui/icons/settingIcon.component';
 import InactiveElement from '@components/ui/inactiveElement/inactiveElement.component';
 import { useAuth } from '@hooks/useAuth.hook';
 import { useCard } from '@hooks/useCard.hook';
+import { useOutside } from '@hooks/useOutside.hook';
 import { FC, useEffect } from 'react';
+import AddCardPopup from './addCardPopup/addCardPopup.component';
 import Card from './card/card.component';
 import { cardHeaderData } from './cardBar.data';
 import css from './cardBar.module.css';
 import CardNotFound from './cardNotFound/cardNotFound.component';
 
 const CardBar: FC = () => {
+  const popupProps = useOutside(false);
+
   const {
     state: { defalutCard },
     actions: { getCards }
@@ -45,11 +49,12 @@ const CardBar: FC = () => {
             <CardInfoElement title='Edit Limits' icon={SettingIcon} />
           </div>
           <div id={css.cardButtonContainer}>
-            <Button color='purple' text='Add Card' icon={PlusIcon} />
+            <Button onClick={() => popupProps.setShow(true)} color='purple' text='Add Card' icon={PlusIcon} />
             {!!defalutCard ? <Button color='pink' text='Remove' icon={MinusIcon} /> : <InactiveElement />}
           </div>
         </div>
       </div>
+      <AddCardPopup {...popupProps} />
     </BarLayout>
   );
 };
