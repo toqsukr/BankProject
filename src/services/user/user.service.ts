@@ -68,7 +68,7 @@ export const UserService = {
     const response = await axios.delete<{ data: string }, AxiosResponse<ICard[]>>(
       `${HOST_URL}/user/cards/delete`,
       {
-        data: { phone: cardNumber },
+        data: { cardNumber },
         headers: {
           'Content-Type': 'application/json'
         }

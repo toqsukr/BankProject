@@ -25,7 +25,7 @@ const CardBar: FC = () => {
 
   const {
     state: { defalutCard },
-    actions: { getCards }
+    actions: { getCards, deleteCard }
   } = useCard();
 
   const {
@@ -34,7 +34,10 @@ const CardBar: FC = () => {
 
   const confirmProps = useOutside(false);
 
-  function handleRemove() {}
+  async function handleRemove() {
+    if (defalutCard) deleteCard({ cardNumber: defalutCard?.cardNumber });
+    confirmProps.setShow(false);
+  }
 
   useEffect(() => {
     user && getCards(user.phone);

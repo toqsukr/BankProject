@@ -23,3 +23,15 @@ export const appendCard = createAsyncThunk<ICard[], ICardRequest>(
     }
   }
 );
+
+export const deleteCard = createAsyncThunk<ICard[], { cardNumber: string }>(
+  '/user/cards/delete',
+  async (data, thunkApi) => {
+    try {
+      const response = await UserService.deleteCard(data.cardNumber);
+      return response;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error);
+    }
+  }
+);

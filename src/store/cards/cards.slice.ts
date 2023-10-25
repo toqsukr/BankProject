@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { appendCard, getCards } from './cards.actions';
+import { appendCard, deleteCard, getCards } from './cards.actions';
 import { ICardInitialState } from './cards.interface';
 
 const initialState: ICardInitialState = {
@@ -34,6 +34,16 @@ export const cardSlice = createSlice({
         state.cards = payload;
       })
       .addCase(appendCard.rejected, state => {
+        state.isLoading = false;
+      })
+      .addCase(deleteCard.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(deleteCard.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.cards = payload;
+      })
+      .addCase(deleteCard.rejected, state => {
         state.isLoading = false;
       });
   }
