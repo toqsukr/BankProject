@@ -62,5 +62,18 @@ export const UserService = {
       }
     );
     return response.data;
+  },
+
+  async deleteCard(cardNumber: string) {
+    const response = await axios.delete<{ data: string }, AxiosResponse<ICard[]>>(
+      `${HOST_URL}/user/cards/delete`,
+      {
+        data: { phone: cardNumber },
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+    );
+    return response.data;
   }
 };

@@ -1,0 +1,32 @@
+.confirmContainer {
+  background-color: white;
+  max-width: 500px;
+  border-radius: 24px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  line-height: 40px;
+}
+
+.textContainer h1 {
+  font-size: 32px;
+  color: var(--color-magneta);
+  margin-bottom: 20px;
+}
+
+.textContainer p {
+  font-size: 22px;
+  margin: 10px 0;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-around;
+}

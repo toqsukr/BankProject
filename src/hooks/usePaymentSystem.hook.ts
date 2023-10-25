@@ -13,6 +13,7 @@ export const usePaymentSystem = () =>
       | 'UNION_PAY'
       | 'MAESTRO'
       | 'UNKNOWN_SYSTEM';
+
     const PaymentSystems: Record<PaymentSystem, PaymentSystem> = {
       VISA: 'VISA',
       MASTERCARD: 'MASTERCARD',

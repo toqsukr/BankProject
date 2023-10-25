@@ -21,17 +21,6 @@ export const expiresValidation = (value: string) => {
 
 export const codeValidation = (code: string) => code.toString().replace(/\D/g, '').slice(0, 3);
 
-export const nameValidation = (name: string) =>
-  name
-    .replace(/[^a-zA-Z\s]/g, '')
-    .toUpperCase()
-    .slice(0, 20);
-
-export const nameInputSetting = {
-  required: 'Enter your name',
-  minLength: { value: 5, message: 'Your name is too short' }
-};
-
 export const expiresInputSetting = {
   required: 'Enter your expires',
   minLength: { value: 5, message: 'Expires is too short' }

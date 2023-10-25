@@ -17,6 +17,7 @@ const CardHolder: FC = () => {
   useEffect(() => {
     user && getCards(user.phone);
   }, []);
+
   return (
     !isLoading &&
     defalutCard && (

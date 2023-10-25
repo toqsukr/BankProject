@@ -9,7 +9,14 @@ import { ICard } from '@store/cards/cards.interface';
 import classNames from 'classnames';
 import { forwardRef } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { cardNumberValidation, codeValidation, expiresValidation } from './addCard.validation';
+import {
+  cardNumberInputSetting,
+  cardNumberValidation,
+  codeInputSetting,
+  codeValidation,
+  expiresInputSetting,
+  expiresValidation
+} from './addCard.validation';
 import { defaultCardData } from './addCardPopup.data';
 import css from './addCardPopup.module.css';
 
@@ -31,6 +38,7 @@ const AddCardPopup = forwardRef<HTMLDivElement, IShow>((popupProps, ref) => {
 
   const cardNumber = watch('cardNumber', '');
   const expires = watch('expires', '');
+
   return (
     <Popup {...popupProps}>
       <div
@@ -47,6 +55,8 @@ const AddCardPopup = forwardRef<HTMLDivElement, IShow>((popupProps, ref) => {
             <Input value={`${user?.name} ${user?.surname}`.toUpperCase()} disabled />
             <Input
               {...register('expires', {
+                ...expiresInputSetting,
+                required: true,
                 onChange: () => setValue('expires', expiresValidation(watch('expires')))
               })}
               placeholder='Expires'
@@ -54,13 +64,19 @@ const AddCardPopup = forwardRef<HTMLDivElement, IShow>((popupProps, ref) => {
             />
             <Input
               {...register('cardNumber', {
+                ...cardNumberInputSetting,
+                required: true,
                 onChange: () => setValue('cardNumber', cardNumberValidation(watch('cardNumber')))
               })}
               placeholder='Card number'
               type='tel'
             />
             <Input
-              {...register('code', { onChange: () => setValue('code', codeValidation(watch('code'))) })}
+              {...register('code', {
+                ...codeInputSetting,
+                required: true,
+                onChange: () => setValue('code', codeValidation(watch('code')))
+              })}
               placeholder='Code'
               type='password'
             />

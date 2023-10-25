@@ -2,6 +2,7 @@ import BarLayout from '@components/layouts/barLayout/barLayout.component';
 import SectionHeader from '@components/sectionHeader/sectionHeader.component';
 import Button from '@components/ui/button/button.component';
 import CardInfoElement from '@components/ui/cardInfoElement/cardInfoElement.component';
+import ConfirmWindow from '@components/ui/confirmWindow/confirmWindow.component';
 import CardIcon from '@components/ui/icons/cardIcon.component';
 import LockIcon from '@components/ui/icons/lockIcon.component';
 import MinusIcon from '@components/ui/icons/minusIcon.component';
@@ -14,13 +15,13 @@ import { useCard } from '@hooks/useCard.hook';
 import { useOutside } from '@hooks/useOutside.hook';
 import { FC, useEffect } from 'react';
 import AddCardPopup from './addCardPopup/addCardPopup.component';
-import { cardHeaderData } from './cardBar.data';
+import { cardHeaderData, removeConfirmProps } from './cardBar.data';
 import css from './cardBar.module.css';
 import CardHolder from './cardHolder/cardHolder.component';
 import CardNotFound from './cardNotFound/cardNotFound.component';
 
 const CardBar: FC = () => {
-  const popupProps = useOutside(false);
+  const addCardProps = useOutside(false);
 
   const {
     state: { defalutCard },
@@ -30,6 +31,10 @@ const CardBar: FC = () => {
   const {
     state: { user }
   } = useAuth();
+
+  const confirmProps = useOutside(false);
+
+  function handleRemove() {}
 
   useEffect(() => {
     user && getCards(user.phone);
@@ -49,12 +54,27 @@ const CardBar: FC = () => {
             <CardInfoElement title='Edit Limits' icon={SettingIcon} />
           </div>
           <div id={css.cardButtonContainer}>
-            <Button onClick={() => popupProps.setShow(true)} color='purple' text='Add Card' icon={PlusIcon} />
-            {!!defalutCard ? <Button color='pink' text='Remove' icon={MinusIcon} /> : <InactiveElement />}
+            <Button
+              onClick={() => addCardProps.setShow(true)}
+              color='purple'
+              text='Add Card'
+              icon={PlusIcon}
+            />
+            {!!defalutCard ? (
+              <Button
+                color='pink'
+                text='Remove'
+                icon={MinusIcon}
+                onClick={() => confirmProps.setShow(true)}
+              />
+            ) : (
+              <InactiveElement />
+            )}
           </div>
         </div>
       </div>
-      <AddCardPopup {...popupProps} />
+      <ConfirmWindow {...confirmProps} action={handleRemove} {...removeConfirmProps} />
+      <AddCardPopup {...addCardProps} />
     </BarLayout>
   );
 };
