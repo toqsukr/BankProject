@@ -10,5 +10,7 @@
 .contactIcon {
   width: calc(var(--index) * 2.5);
   height: calc(var(--index) * 2.5);
+  max-width: 70px;
+  max-height: 70px;
   border-radius: 50%;
 }

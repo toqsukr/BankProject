@@ -41,7 +41,7 @@ export const usePaymentSystem = () =>
     } as const;
 
     const PaymentSystemImages: Record<PaymentSystem, string> = {
-      VISA: '/images/visa.png',
+      VISA: '/images/visa.jpg',
       MASTERCARD: '/images/mastercard.png',
       AMEX: '/images/amex.png',
       DISCOVER: '/images/discover.png',
