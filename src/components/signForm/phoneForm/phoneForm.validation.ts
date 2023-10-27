@@ -1,4 +1,4 @@
-export const handleChange = (value: string) => {
+export const handlePhoneChange = (value: string) => {
   const phoneNumber = value.replace(/\D/g, '');
   if (phoneNumber.length >= 10) {
     return `+${phoneNumber[0]} ${phoneNumber.substring(1, 4)} ${phoneNumber.substring(

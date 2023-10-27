@@ -8,6 +8,7 @@ import { passwordInputSetting } from '../SignForm.data';
 import { dateInputSetting, nameInputSetting, surnameInputSetting } from './registerForm.data';
 import { IRegisterForm } from './registerForm.interface';
 import css from './registerForm.module.css';
+import { handleDateChange, handleNameChange } from './registerForm.validation';
 
 const RegisterForm: FC<IRegisterForm> = ({ phone }) => {
   const {
@@ -25,11 +26,32 @@ const RegisterForm: FC<IRegisterForm> = ({ phone }) => {
   };
   return (
     <form id={css.form} onSubmit={handleSubmit(onSubmit)}>
-      <Input {...formSubmit('name', nameInputSetting)} placeholder='Name' type='text' />
+      <Input
+        {...formSubmit('name', {
+          ...nameInputSetting,
+          onChange: () => setValue('name', handleNameChange(watch('name')))
+        })}
+        placeholder='Name'
+        type='text'
+      />
       <p>{errors.name?.message}</p>
-      <Input {...formSubmit('surname', surnameInputSetting)} placeholder='Surname' type='text' />
+      <Input
+        {...formSubmit('surname', {
+          ...surnameInputSetting,
+          onChange: () => setValue('surname', handleNameChange(watch('surname')))
+        })}
+        placeholder='Surname'
+        type='text'
+      />
       <p>{errors.surname?.message}</p>
-      <Input {...formSubmit('dateOfBirth', dateInputSetting)} placeholder='Birthdate' type='tel' />
+      <Input
+        {...formSubmit('dateOfBirth', {
+          ...dateInputSetting,
+          onChange: () => setValue('dateOfBirth', handleDateChange(watch('dateOfBirth')))
+        })}
+        placeholder='Birthdate'
+        type='tel'
+      />
       <p>{errors.dateOfBirth?.message}</p>
       <Input {...formSubmit('password', passwordInputSetting)} placeholder='Password' type='password' />
       <p>{errors.password?.message}</p>

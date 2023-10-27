@@ -19,6 +19,6 @@ export const surnameInputSetting = {
 };
 
 export const dateInputSetting = {
-  required: 'Enter your datee of birth',
+  required: 'Enter your date of birth',
   minLength: { value: 10, message: 'Date of your birth is too short' }
 };

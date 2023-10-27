@@ -4,6 +4,7 @@ import Input from '@components/ui/input/input.component';
 import { useAuth } from '@hooks/useAuth.hook';
 import { FC } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { passwordInputSetting } from '../SignForm.data';
 import { ILoginForm } from './loginForm.interface';
 import css from './loginForm.module.css';
 
@@ -22,7 +23,7 @@ const LoginForm: FC<ILoginForm> = ({ phone }) => {
   };
   return (
     <form id={css.form} onSubmit={handleSubmit(onSubmit)}>
-      <Input {...register('password')} placeholder='Password' type='password' />
+      <Input {...register('password', passwordInputSetting)} placeholder='Password' type='password' />
       <Button color='purple' icon={ArrowHeadIcon} />
       <p>{errors.password?.message}</p>
     </form>

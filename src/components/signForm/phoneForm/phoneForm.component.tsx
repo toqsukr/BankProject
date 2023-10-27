@@ -7,7 +7,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { phoneInputSetting } from './phoneForm.data';
 import { IPhoneForm } from './phoneForm.interface';
 import css from './phoneForm.module.css';
-import { handleChange } from './phoneForm.validation';
+import { handlePhoneChange } from './phoneForm.validation';
 
 const PhoneForm: FC<IPhoneForm> = ({ setUserStatus }) => {
   const { getUser } = useProfile();
@@ -32,7 +32,7 @@ const PhoneForm: FC<IPhoneForm> = ({ setUserStatus }) => {
         <Input
           {...register('phoneNumber', {
             ...phoneInputSetting,
-            onChange: () => setValue('phoneNumber', handleChange(watch('phoneNumber')))
+            onChange: () => setValue('phoneNumber', handlePhoneChange(watch('phoneNumber')))
           })}
           placeholder='Phone number'
           type='tel'
