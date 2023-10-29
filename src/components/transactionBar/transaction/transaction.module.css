@@ -1,0 +1,16 @@
+.elementContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subjectContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
