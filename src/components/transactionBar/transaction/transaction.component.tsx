@@ -1,9 +1,10 @@
 import TransactionIcon from '@components/ui/icons/transactionIcon.component';
+import cln from 'classnames';
 import { FC } from 'react';
-import { ITransaction } from './transaction.interface';
+import { ITransaction, TransactionTypes } from './transaction.interface';
 import css from './transaction.module.css';
 
-const Transaction: FC<ITransaction> = ({ date, time, money, subject, image, message }) => {
+const Transaction: FC<ITransaction> = ({ date, time, money, subject, image, message, type }) => {
   return (
     <section className={css.elementContainer}>
       <div className={css.subjectContainer}>
@@ -17,7 +18,9 @@ const Transaction: FC<ITransaction> = ({ date, time, money, subject, image, mess
         <span>{date}</span>
         <span>{time}</span>
       </div>
-      <div className={css.moneyContainer}>{money}</div>
+      <div className={cln({ [css.moneyContainer]: true, [css.debitMoney]: type === TransactionTypes.DEBIT })}>
+        {money}
+      </div>
     </section>
   );
 };

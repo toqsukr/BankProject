@@ -5,4 +5,10 @@ export interface ITransaction {
   date: string;
   time: string;
   money: string;
+  type: TransactionTypes;
+}
+
+export const enum TransactionTypes {
+  RECEIPT,
+  DEBIT
 }

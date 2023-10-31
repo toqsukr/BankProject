@@ -1,4 +1,4 @@
-import { ITransaction } from './transaction/transaction.interface';
+import { ITransaction, TransactionTypes } from './transaction/transaction.interface';
 
 export const transactions: ITransaction[] = [
   {
@@ -6,6 +6,7 @@ export const transactions: ITransaction[] = [
     subject: 'Alina Sooela',
     money: 'USD 300.00',
     time: '9.00 AM',
-    message: 'Sent: Meal Bills'
+    message: 'Sent: Meal Bills',
+    type: TransactionTypes.DEBIT
   }
 ];
