@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { IButton } from './button.interface';
 import css from './button.module.css';
 
-const Button: FC<IButton> = ({ text, icon: Icon, color, ...props }) => {
+const Button: FC<IButton> = ({ text, icon: Icon, color = 'white', ...props }) => {
   const buttonClasses = classNames({
     [css.buttonContainer]: true,
     [css.defaultButtonColor]: color === 'white',
